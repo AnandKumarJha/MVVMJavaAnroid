@@ -20,15 +20,17 @@ import com.example.mvvmjavaandroid.viewmodel.factory.ViewModelFactory;
 //room update database schema
 //insert data initially
 
+//work manager(done)
+
 //Recycler view swipe and adapter
 //dialog with match parent
 
 //with fragment viewmodel and data binding and dialog
 //view model factory with data binding
 
-//retrofit (Retrofit activity)
-//data binding
-//glide
+//retrofit (Retrofit activity)(done)
+//data binding(done)
+//glide(done)
 
 //dagger
 //rx
@@ -70,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Boolean aBoolean) {
                 startActivity(new Intent(MainActivity.this, RoomActivity.class));
+            }
+        });
+
+        mMainViewModel.workManagerClicked.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                startActivity(new Intent(MainActivity.this, WorkManagerActivity.class));
             }
         });
     }

@@ -10,7 +10,7 @@ public class MainViewModel extends ViewModel {
     int mSumDummyData;
     public MutableLiveData<Boolean> retrofitButtonClicked = new MutableLiveData<>();
     public MutableLiveData<Boolean> roomButtonClicked = new MutableLiveData<>();
-
+    public MutableLiveData<Boolean> workManagerClicked = new MutableLiveData<>();
     public MainViewModel(int mSumDummyData) {
         this.mSumDummyData = mSumDummyData;
     }
@@ -23,5 +23,9 @@ public class MainViewModel extends ViewModel {
     public void roomButtonClicked() {
         Log.e("TAG", "Value Recived : " + mSumDummyData);
         roomButtonClicked.setValue(true);
+    }
+
+    public void workMangerClicked(){
+        workManagerClicked.setValue(true);
     }
 }
