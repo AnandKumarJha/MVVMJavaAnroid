@@ -33,16 +33,17 @@ import com.example.mvvmjavaandroid.viewmodel.factory.ViewModelFactory;
 //glide(done)
 
 //dagger
-//rx
 
 //test cases for kotlin
 //test cases for rx java
 
+//diff Util
+
 //kotlin
 //Coroutine
-//By only retrofit
+//By only retrofit(done)
 //By Co routine
-//By Rx
+//By Rx(done)
 
 public class MainActivity extends AppCompatActivity {
 

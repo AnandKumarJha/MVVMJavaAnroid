@@ -1,6 +1,7 @@
 package com.example.mvvmjavaandroid.model.api;
 
 import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class RetrofitClient {
@@ -12,6 +13,7 @@ public class RetrofitClient {
             retrofit = new Retrofit
                     .Builder()
                     .baseUrl(BASE_URL)
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //rx java specific call
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
