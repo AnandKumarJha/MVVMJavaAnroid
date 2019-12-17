@@ -49,6 +49,7 @@ public class EmployeeRepository {
 //        });
 
 
+        //for rx
         userDataService.getEmployees()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

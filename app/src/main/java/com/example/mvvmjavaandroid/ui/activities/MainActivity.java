@@ -8,16 +8,19 @@ import androidx.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.mvvmjavaandroid.MyApplication;
 import com.example.mvvmjavaandroid.R;
 import com.example.mvvmjavaandroid.databinding.ActivityMainBinding;
 import com.example.mvvmjavaandroid.viewmodel.MainViewModel;
 import com.example.mvvmjavaandroid.viewmodel.factory.ViewModelFactory;
 
+import javax.inject.Inject;
+
 //MVVM(done)
 //View Model with factory(done)
 //Live Data(done)
 //Room(done)
-//room update database schema
+//room update database schema(done)
 //insert data initially
 
 //work manager(done)
@@ -32,12 +35,13 @@ import com.example.mvvmjavaandroid.viewmodel.factory.ViewModelFactory;
 //data binding(done)
 //glide(done)
 
-//dagger
+//dagger(working)
 
 //test cases for kotlin
 //test cases for rx java
 
 //diff Util
+//paging
 
 //kotlin
 //Coroutine
@@ -49,15 +53,15 @@ public class MainActivity extends AppCompatActivity {
 
     private MainViewModel mMainViewModel;
     private ActivityMainBinding activityMainBinding;
-    private ViewModelFactory mViewModelFactory;
-    private static final int SOME_DUMMY_DATA = 5;
+    @Inject
+    ViewModelFactory mViewModelFactory;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Viewmodel factory is being used for some dummy data just for example purpose
-        mViewModelFactory = new ViewModelFactory(SOME_DUMMY_DATA);
+        ((MyApplication)getApplication()).getMainComponent().inject(this);
         activityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main);
         mMainViewModel = ViewModelProviders.of(this, mViewModelFactory).get(MainViewModel.class);
         activityMainBinding.setMainViewModel(mMainViewModel);

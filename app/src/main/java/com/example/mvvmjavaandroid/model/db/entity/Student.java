@@ -50,6 +50,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Roll Number : "+rollNumber+" Name : "+ studentName+" Phone : "+ phoneNumber;
+        return "Roll Number : "+rollNumber+" Name : "+ studentName+" Phone : "+ phoneNumber+"\n";
     }
 }
