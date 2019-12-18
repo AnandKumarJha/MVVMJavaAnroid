@@ -21,7 +21,7 @@ import javax.inject.Inject;
 //Live Data(done)
 //Room(done)
 //room update database schema(done)
-//insert data initially
+//insert data initially(done)
 
 //work manager(done)
 
@@ -35,19 +35,21 @@ import javax.inject.Inject;
 //data binding(done)
 //glide(done)
 
-//dagger(working)
+//dagger(done) once more would be done after getting through deeply
 
 //test cases for kotlin
 //test cases for rx java
 
-//diff Util
-//paging
+//diff Util(done)
+//paging(done)
 
 //kotlin
 //Coroutine
 //By only retrofit(done)
 //By Co routine
 //By Rx(done)
+//extenton function
+//codein
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +86,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onChanged(Boolean aBoolean) {
                 startActivity(new Intent(MainActivity.this, WorkManagerActivity.class));
+            }
+        });
+
+        mMainViewModel.pagingClicked.observe(this, new Observer<Boolean>() {
+            @Override
+            public void onChanged(Boolean aBoolean) {
+                startActivity(new Intent(MainActivity.this, PagingActivity.class));
             }
         });
     }

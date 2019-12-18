@@ -11,6 +11,8 @@ public class MainViewModel extends ViewModel {
     public MutableLiveData<Boolean> retrofitButtonClicked = new MutableLiveData<>();
     public MutableLiveData<Boolean> roomButtonClicked = new MutableLiveData<>();
     public MutableLiveData<Boolean> workManagerClicked = new MutableLiveData<>();
+    public MutableLiveData<Boolean> pagingClicked = new MutableLiveData<>();
+
     public MainViewModel(int mSumDummyData) {
         this.mSumDummyData = mSumDummyData;
     }
@@ -27,5 +29,9 @@ public class MainViewModel extends ViewModel {
 
     public void workMangerClicked(){
         workManagerClicked.setValue(true);
+    }
+
+    public void pagingClicked(){
+        pagingClicked.setValue(true);
     }
 }
